@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Glisse & Neige – Location de skis au pied des pistes</title>
+<style>
+  :root{--navy:#0f2a44;--ice:#e8f3fb;--accent:#e4572e;--text:#1d2733;--muted:#5d6b7a}
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{font-family:system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;color:var(--text);background:#fff;line-height:1.55}
+  a{color:inherit}
+  .wrap{max-width:1060px;margin:0 auto;padding:0 20px}
+  header{position:sticky;top:0;background:rgba(255,255,255,.95);backdrop-filter:blur(6px);border-bottom:1px solid #e3e9ef;z-index:10}
+  header .wrap{display:flex;align-items:center;justify-content:space-between;height:64px}
+  .logo{font-weight:800;font-size:20px;color:var(--navy);letter-spacing:.3px}
+  .logo span{color:var(--accent)}
+  nav a{margin-left:22px;text-decoration:none;font-size:15px;color:var(--muted)}
+  nav a:hover{color:var(--navy)}
+  .hero{background:linear-gradient(160deg,var(--navy) 0%,#1f4f7a 60%,#5d8fb8 100%);color:#fff;padding:90px 0 110px;position:relative;overflow:hidden}
+  .hero:after{content:"";position:absolute;left:0;right:0;bottom:-1px;height:90px;background:#fff;clip-path:polygon(0 100%,0 55%,18% 20%,32% 60%,50% 5%,66% 55%,82% 25%,100% 60%,100% 100%)}
+  .hero h1{font-size:44px;line-height:1.1;max-width:640px}
+  .hero p{margin:18px 0 30px;font-size:18px;max-width:560px;opacity:.9}
+  .btn{display:inline-block;background:var(--accent);color:#fff;text-decoration:none;padding:14px 26px;border-radius:8px;font-weight:700}
+  .btn.ghost{background:transparent;border:2px solid #fff;margin-left:10px}
+  .badges{display:flex;gap:26px;margin-top:38px;flex-wrap:wrap;font-size:14px;opacity:.9}
+  section{padding:70px 0}
+  h2{font-size:30px;color:var(--navy);margin-bottom:10px}
+  .sub{color:var(--muted);margin-bottom:36px}
+  .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:20px}
+  .card{border:1px solid #e3e9ef;border-radius:12px;padding:24px;background:#fff}
+  .card h3{color:var(--navy);margin-bottom:8px}
+  .icon{font-size:30px;margin-bottom:10px}
+  .ice{background:var(--ice)}
+  table{width:100%;border-collapse:collapse;background:#fff;border-radius:12px;overflow:hidden}
+  th,td{padding:14px 16px;text-align:left;border-bottom:1px solid #e3e9ef}
+  th{background:var(--navy);color:#fff;font-weight:600}
+  td.price{font-weight:700;color:var(--navy)}
+  .note{font-size:14px;color:var(--muted);margin-top:12px}
+  .steps{counter-reset:s}
+  .steps .card{position:relative;padding-top:44px}
+  .steps .card:before{counter-increment:s;content:counter(s);position:absolute;top:16px;left:24px;background:var(--accent);color:#fff;width:28px;height:28px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:14px}
+  .info{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:24px}
+  .info p{margin-bottom:6px}
+  .cta{background:var(--navy);color:#fff;text-align:center;border-radius:16px;padding:50px 24px}
+  .cta h2{color:#fff}
+  .cta p{opacity:.85;margin:10px 0 26px}
+  footer{padding:30px 0;text-align:center;color:var(--muted);font-size:14px;border-top:1px solid #e3e9ef}
+  .cat{color:var(--navy);margin:10px 0 16px;font-size:20px}
+  .gammes{margin-bottom:34px}
+  .gamme{display:flex;flex-direction:column}
+  .gamme p{color:var(--muted);font-size:15px}
+  .gamme ul{list-style:none;margin:12px 0;font-size:14px}
+  .gamme li:before{content:"✓ ";color:var(--accent);font-weight:700}
+  .from{margin-top:auto;font-weight:800;color:var(--navy);font-size:18px}
+  .tag{align-self:flex-start;font-size:12px;font-weight:700;padding:4px 10px;border-radius:20px;margin-bottom:10px}
+  .t1{background:#dff5e3;color:#1e7a35}.t2{background:#dbeafe;color:#1d4ed8}.t3{background:#fde2e2;color:#b91c1c}.t4{background:#1f2937;color:#fff}
+  @media(max-width:640px){.hero h1{font-size:32px}nav{display:none}.btn.ghost{margin:12px 0 0}}
+</style>
+</head>
+<body>
+<header>
+  <div class="wrap">
+    <div class="logo">Glisse<span>&</span>Neige</div>
+    <nav><a href="#location">Location</a><a href="#gammes">Gammes</a><a href="#tarifs">Tarifs</a><a href="#atelier">Atelier</a><a href="#infos">Infos</a></nav>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="wrap">
+    <h1>Votre matériel de ski prêt au pied des pistes</h1>
+    <p>Skis, snowboards, chaussures et casques réglés par des pros. Réservez avant d'arriver, récupérez en 5 minutes et filez sur les pistes.</p>
+    <a class="btn" href="#infos">Réserver mon matériel</a><a class="btn ghost" href="tel:0600000000">Appeler la boutique</a>
+    <div class="badges"><span>⛷️ À 50 m des remontées</span><span>🎿 Matériel renouvelé chaque saison</span><span>👨‍👩‍👧 Packs famille</span></div>
+  </div>
+</section>
+
+<section id="location">
+  <div class="wrap">
+    <h2>Location</h2>
+    <p class="sub">Du débutant à l'expert, on vous conseille le matériel adapté à votre niveau.</p>
+    <div class="grid">
+      <div class="card"><div class="icon">🎿</div><h3>Ski alpin</h3><p>Gammes découverte, sport et performance. Réglage des fixations sur place.</p></div>
+      <div class="card"><div class="icon">🏂</div><h3>Snowboard</h3><p>Planches freeride et freestyle, boots confortables pour toute la journée.</p></div>
+      <div class="card"><div class="icon">🧒</div><h3>Enfants</h3><p>Packs complets dès 3 ans, casque inclus et adapté à la taille.</p></div>
+      <div class="card"><div class="icon">🥾</div><h3>Raquettes & rando</h3><p>Raquettes, bâtons et skis de randonnée pour sortir des pistes.</p></div>
+    </div>
+  </div>
+</section>
+
+<section id="gammes" class="ice">
+  <div class="wrap">
+    <h2>Nos gammes</h2>
+    <p class="sub">Choisissez la gamme qui correspond à votre niveau. On ajuste sur place si besoin.</p>
+    <h3 class="cat">⛷️ Ski</h3>
+    <div class="grid gammes">
+      <div class="card gamme"><span class="tag t1">Débutant</span><h3>Découverte</h3><p>Skis courts et tolérants, faciles à tourner. Idéal pour les premières descentes et les pistes vertes et bleues.</p><ul><li>Chaussures confort</li><li>Bâtons inclus</li></ul><div class="from">dès 22 € / jour</div></div>
+      <div class="card gamme"><span class="tag t2">Intermédiaire</span><h3>Sport</h3><p>Polyvalents et stables, pour progresser sur toutes les pistes et gagner en vitesse.</p><ul><li>Chaussures semi-rigides</li><li>Bâtons inclus</li></ul><div class="from">dès 29 € / jour</div></div>
+      <div class="card gamme"><span class="tag t3">Confirmé</span><h3>Performance</h3><p>Skis de dernière saison, accroche et précision sur neige dure, pour les skieurs exigeants.</p><ul><li>Chaussures rigides</li><li>Bâtons inclus</li></ul><div class="from">dès 38 € / jour</div></div>
+      <div class="card gamme"><span class="tag t4">Expert</span><h3>Freeride & Premium</h3><p>Skis larges pour la poudreuse et le hors-piste, haut de gamme neufs de l'année.</p><ul><li>Chaussures haut de gamme</li><li>Casque inclus</li></ul><div class="from">dès 45 € / jour</div></div>
+    </div>
+    <h3 class="cat">🏂 Snowboard & enfants</h3>
+    <div class="grid gammes">
+      <div class="card gamme"><span class="tag t1">Tous niveaux</span><h3>Snowboard Découverte</h3><p>Planches souples pour apprendre et enchaîner les virages en confiance.</p><ul><li>Boots confort</li></ul><div class="from">dès 24 € / jour</div></div>
+      <div class="card gamme"><span class="tag t3">Confirmé</span><h3>Snowboard Freestyle / Freeride</h3><p>Pour le snowpark ou la poudreuse, planches nerveuses et réactives.</p><ul><li>Boots rigides</li></ul><div class="from">dès 32 € / jour</div></div>
+      <div class="card gamme"><span class="tag t2">3 – 12 ans</span><h3>Junior</h3><p>Skis ou snowboard adaptés à la taille et au niveau de l'enfant.</p><ul><li>Casque offert</li></ul><div class="from">dès 14 € / jour</div></div>
+      <div class="card gamme"><span class="tag t1">Balade</span><h3>Raquettes & Rando</h3><p>Raquettes, bâtons et skis de randonnée pour sortir des pistes.</p><ul><li>Conseils itinéraires</li></ul><div class="from">dès 10 € / jour</div></div>
+    </div>
+  </div>
+</section>
+
+<section id="tarifs">
+  <div class="wrap">
+    <h2>Tarifs</h2>
+    <p class="sub">Prix par personne, chaussures incluses. -15 % en réservant en ligne.</p>
+    <table>
+      <tr><th>Pack</th><th>1 jour</th><th>3 jours</th><th>6 jours</th></tr>
+      <tr><td>Découverte (débutant)</td><td class="price">22 €</td><td class="price">60 €</td><td class="price">105 €</td></tr>
+      <tr><td>Sport (intermédiaire)</td><td class="price">29 €</td><td class="price">80 €</td><td class="price">140 €</td></tr>
+      <tr><td>Performance (confirmé)</td><td class="price">38 €</td><td class="price">105 €</td><td class="price">185 €</td></tr>
+      <tr><td>Snowboard</td><td class="price">28 €</td><td class="price">78 €</td><td class="price">135 €</td></tr>
+      <tr><td>Enfant (- 12 ans)</td><td class="price">14 €</td><td class="price">38 €</td><td class="price">65 €</td></tr>
+    </table>
+    <p class="note">Tarifs donnés à titre d'exemple, modifiables selon vos prix.</p>
+  </div>
+</section>
+
+<section class="ice">
+  <div class="wrap">
+    <h2>Comment ça marche</h2>
+    <p class="sub">Simple et rapide, même en plein samedi de vacances.</p>
+    <div class="grid steps">
+      <div class="card"><h3>Réservez</h3><p>Choisissez votre pack et vos dates par téléphone ou en ligne.</p></div>
+      <div class="card"><h3>Passez à la boutique</h3><p>Votre matériel est prêt et réglé à votre nom.</p></div>
+      <div class="card"><h3>Profitez</h3><p>Casier à skis disponible le soir, échange gratuit si besoin.</p></div>
+    </div>
+  </div>
+</section>
+
+<section id="atelier">
+  <div class="wrap">
+    <h2>Atelier</h2>
+    <p class="sub">Entretien de votre propre matériel, rapide et soigné.</p>
+    <div class="grid">
+      <div class="card"><h3>Fartage</h3><p>À partir de 15 €. Prêt en 1 heure.</p></div>
+      <div class="card"><h3>Affûtage des carres</h3><p>À partir de 20 €. Accroche garantie sur neige dure.</p></div>
+      <div class="card"><h3>Réparation de semelle</h3><p>Sur devis. Diagnostic gratuit à la boutique.</p></div>
+      <div class="card"><h3>Bootfitting</h3><p>Chaussures thermoformées pour un confort sur mesure.</p></div>
+    </div>
+  </div>
+</section>
+
+<section id="infos">
+  <div class="wrap">
+    <div class="info">
+      <div>
+        <h2>Nous trouver</h2>
+        <p>📍 12 rue des Pistes, 00000 Votre Station</p>
+        <p>📞 06 00 00 00 00</p>
+        <p>✉️ contact@exemple.fr</p>
+      </div>
+      <div>
+        <h2>Horaires</h2>
+        <p>En saison : 8h – 19h, 7 jours sur 7</p>
+        <p>Samedi : 7h30 – 20h</p>
+        <p>Hors saison : sur rendez-vous</p>
+      </div>
+    </div>
+    <div class="cta" style="margin-top:50px">
+      <h2>Réservez votre matériel avant d'arriver</h2>
+      <p>Moins d'attente en boutique, plus de temps sur les pistes.</p>
+      <a class="btn" href="tel:0600000000">Réserver par téléphone</a>
+    </div>
+  </div>
+</section>
+
+<footer>Démo – Glisse & Neige est un magasin fictif. Tout est modifiable : nom, photos, couleurs, tarifs.</footer>
+</body>
+</html>
